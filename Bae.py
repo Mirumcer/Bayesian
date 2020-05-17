@@ -4,6 +4,7 @@ import math
 from sklearn.metrics import confusion_matrix, accuracy_score
 # Gaussian Naive Baye's Binary Classification for spam data
 # Spencer Duncan
+#data from https://archive.ics.uci.edu/ml/datasets/spambase
 
 #read data and return an np array
 def readdata(filename):
@@ -111,7 +112,6 @@ def main():
     # now run the test
     test, targets = test[:,:57], test[:,57:58]
     labels = classify(test, prior, std, mean)
-    confusion_matrix()
     confusion = confusion_matrix(targets, labels)
     print("Confusion matrix:\n", confusion)
     accuracy = accuracy_score(targets, labels)
